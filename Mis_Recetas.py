@@ -36,12 +36,28 @@ def inicio():
     return eleccion_menu
 
 
+def mostrar_categoria(ruta):
+    print("Categorias: ")
+    ruta_categoria = Path(ruta)
+    lista_categorias = []
+    contador = 1
+
+    for carpeta in ruta_categoria.iterdir():
+        carpeta_str = str(carpeta.name)
+        print(f"[{contador}] - {carpeta_str}")
+        lista_categorias.append(carpeta)
+        contador += 1
+
+    return lista_categorias
+
 inicio()
 
 menu = 0
 
 if menu == 1:
     #mostrar categorias
+    mis_categorias = mostrar_categoria(mi_ruta)
+
     #elegir categoria
     #mostrar receeta
     #elegir  receta
@@ -50,6 +66,8 @@ if menu == 1:
     pass
 elif menu == 2:
     # mostrar categorias
+    mis_categorias = mostrar_categoria(mi_ruta)
+
     # elegir categoria
     #crear receta
     #volver inicio
@@ -60,6 +78,8 @@ elif menu == 3:
     pass
 elif menu == 4:
     # mostrar categorias
+    mis_categorias = mostrar_categoria(mi_ruta)
+
     # elegir categoria
     # mostrar receeta
     # elegir  receta
@@ -68,6 +88,8 @@ elif menu == 4:
     pass
 elif menu == 5:
     # mostrar categorias
+    mis_categorias = mostrar_categoria(mi_ruta)
+    
     # elegir categoria
     #eliminar categorias
     #volver inicio
