@@ -50,6 +50,16 @@ def mostrar_categoria(ruta):
 
     return lista_categorias
 
+
+def elegir_categoria(lista):
+    eleccion_correcta = 'x'
+
+    while not eleccion_correcta.isnumeric() or int(eleccion_correcta) not in range(1,len(lista)+1):
+        eleccion_correcta  = input("\n Elige una categoria: ")
+
+    return lista[int(eleccion_correcta)-1]
+
+
 inicio()
 
 menu = 0
@@ -59,6 +69,8 @@ if menu == 1:
     mis_categorias = mostrar_categoria(mi_ruta)
 
     #elegir categoria
+    mi_categoria = elegir_categoria(mis_categorias)
+
     #mostrar receeta
     #elegir  receta
     #leer receta
@@ -69,6 +81,8 @@ elif menu == 2:
     mis_categorias = mostrar_categoria(mi_ruta)
 
     # elegir categoria
+    mi_categoria = elegir_categoria(mis_categorias)
+
     #crear receta
     #volver inicio
     pass
@@ -81,6 +95,8 @@ elif menu == 4:
     mis_categorias = mostrar_categoria(mi_ruta)
 
     # elegir categoria
+    mi_categoria = elegir_categoria(mis_categorias)
+
     # mostrar receeta
     # elegir  receta
     # eliminar receta
@@ -91,6 +107,8 @@ elif menu == 5:
     mis_categorias = mostrar_categoria(mi_ruta)
     
     # elegir categoria
+    mi_categoria = elegir_categoria(mis_categorias)
+    
     #eliminar categorias
     #volver inicio
     pass
