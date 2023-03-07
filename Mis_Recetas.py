@@ -72,7 +72,12 @@ def mostrar_receta(ruta):
 
     return lista_recetas
 
+def elegir_recetas(lista):
+    eleccion_receta = 'x'
+    while not eleccion_receta.isnumeric() or  int(eleccion_receta) not in range(1, len(lista)+1):
+        eleccion_receta = input("\n elige una receta: ")
 
+    return lista[int(eleccion_receta)-1]
 inicio()
 
 menu = 0
@@ -85,9 +90,11 @@ if menu == 1:
     mi_categoria = elegir_categoria(mis_categorias)
 
     #mostrar receeta
-    mis_recetas = mostrar_receta(mis_categorias)
+    mis_recetas = mostrar_receta(mi_categoria)
 
     #elegir  receta
+    mi_receta =elegir_recetas(mis_recetas)
+
     #leer receta
     #volver inicio
     pass
@@ -114,8 +121,10 @@ elif menu == 4:
 
     # mostrar receeta
     mis_recetas = mostrar_receta(mis_categorias)
-    
+
     # elegir  receta
+    mi_receta = elegir_recetas(mis_recetas)
+    
     # eliminar receta
     # volver inicio
     pass
