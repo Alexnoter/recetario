@@ -59,6 +59,19 @@ def elegir_categoria(lista):
 
     return lista[int(eleccion_correcta)-1]
 
+def mostrar_receta(ruta):
+    print("Recetas: ")
+    ruta_recetas = Path(ruta)
+    lista_recetas = []
+    contador = 1
+    for receta in ruta_recetas.glob('*.txt'):
+        receta_str = str(receta.name)
+        print(f"[{contador}] - {receta_str}")
+        lista_recetas.append(receta)
+        contador += 1
+
+    return lista_recetas
+
 
 inicio()
 
@@ -72,6 +85,8 @@ if menu == 1:
     mi_categoria = elegir_categoria(mis_categorias)
 
     #mostrar receeta
+    mis_recetas = mostrar_receta(mis_categorias)
+
     #elegir  receta
     #leer receta
     #volver inicio
@@ -98,6 +113,8 @@ elif menu == 4:
     mi_categoria = elegir_categoria(mis_categorias)
 
     # mostrar receeta
+    mis_recetas = mostrar_receta(mis_categorias)
+    
     # elegir  receta
     # eliminar receta
     # volver inicio
@@ -108,7 +125,7 @@ elif menu == 5:
     
     # elegir categoria
     mi_categoria = elegir_categoria(mis_categorias)
-    
+
     #eliminar categorias
     #volver inicio
     pass
