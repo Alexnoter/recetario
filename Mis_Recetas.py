@@ -33,7 +33,7 @@ def inicio():
         [5] - Eliminar categoria
         [6] - Salir del programa''')
         eleccion_menu = input()
-    return eleccion_menu
+    return int(eleccion_menu)
 
 
 def mostrar_categoria(ruta):
@@ -146,12 +146,14 @@ while not finalizar_programa:
 
         #mostrar receeta
         mis_recetas = mostrar_receta(mi_categoria)
+        if len(mis_recetas) < 1:
+            print("no hay recetas en esta categoría.")
+        else:
+            #elegir  receta
+            mi_receta =elegir_recetas(mis_recetas)
 
-        #elegir  receta
-        mi_receta =elegir_recetas(mis_recetas)
-
-        #leer receta
-        leer_receta(mi_receta)
+            #leer receta
+            leer_receta(mi_receta)
 
         #volver inicio
         volver_inicio()
@@ -188,12 +190,14 @@ while not finalizar_programa:
 
         # mostrar receeta
         mis_recetas = mostrar_receta(mis_categorias)
+        if len(mis_recetas) < 1:
+            print("no hay recetas en esta categoría.")
+        else:
+            # elegir  receta
+            mi_receta = elegir_recetas(mis_recetas)
 
-        # elegir  receta
-        mi_receta = elegir_recetas(mis_recetas)
-
-        # eliminar receta
-        eliminar_receta(mi_receta)
+            # eliminar receta
+            eliminar_receta(mi_receta)
 
         # volver inicio
         volver_inicio()
