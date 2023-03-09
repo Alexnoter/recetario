@@ -124,6 +124,11 @@ def eliminar_categoria(categoria):
     Path(categoria).rmdir()
     print(f"la categoria {categoria.name} ha sido eliminada")
 
+def volver_inicio():
+    eleccion_regresar =  'x'
+
+    while eleccion_regresar.lower() != 'v':
+        eleccion_regresar = input("\n presione V para volver al menu: ")
 
 menu = 0
 
@@ -144,7 +149,9 @@ if menu == 1:
     leer_receta(mi_receta)
 
     #volver inicio
-    pass
+    volver_inicio()
+
+    
 elif menu == 2:
     # mostrar categorias
     mis_categorias = mostrar_categoria(mi_ruta)
@@ -156,13 +163,17 @@ elif menu == 2:
     crear_receta(mi_categoria)
     
     #volver inicio
-    pass
+    volver_inicio()
+
+
 elif menu == 3:
     #crear categoria
     crear_categoria(mi_ruta)
 
     #volver al inicio
-    pass
+    volver_inicio()
+
+
 elif menu == 4:
     # mostrar categorias
     mis_categorias = mostrar_categoria(mi_ruta)
@@ -180,7 +191,9 @@ elif menu == 4:
     eliminar_receta(mi_receta)
 
     # volver inicio
-    pass
+    volver_inicio()
+
+
 elif menu == 5:
     # mostrar categorias
     mis_categorias = mostrar_categoria(mi_ruta)
@@ -192,7 +205,9 @@ elif menu == 5:
     eliminar_categoria(mi_categoria)
 
     #volver inicio
-    pass
+    volver_inicio()
+
+
 elif menu == 6:
     #finalizar programa
-    pass
+
