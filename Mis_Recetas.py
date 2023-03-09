@@ -120,6 +120,10 @@ def eliminar_receta(receta):
     Path(receta).unlink()
     print(f"la receta {receta.name} ha sido eliminada")
 
+def eliminar_categoria(categoria):
+    Path(categoria).rmdir()
+    print(f"la categoria {categoria.name} ha sido eliminada")
+
 
 menu = 0
 
@@ -174,7 +178,7 @@ elif menu == 4:
 
     # eliminar receta
     eliminar_receta(mi_receta)
-    
+
     # volver inicio
     pass
 elif menu == 5:
@@ -185,6 +189,8 @@ elif menu == 5:
     mi_categoria = elegir_categoria(mis_categorias)
 
     #eliminar categorias
+    eliminar_categoria(mi_categoria)
+
     #volver inicio
     pass
 elif menu == 6:
