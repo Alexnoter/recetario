@@ -82,6 +82,24 @@ def elegir_recetas(lista):
 def leer_receta(receta):
     print(Path.read_text(receta))
 
+def crear_receta(ruta):
+    existe = False
+
+    while not existe:
+        print("Escribe el nombre de tu receta")
+        nombre_receta = input() +'.txt'
+        print("Escribe tu receta")
+        contenido_receta = input()
+        ruta_nueva = Path(ruta,nombre_receta)
+
+        if not os.path.exists(ruta_nueva):
+            Path.write_text(ruta_nueva, contenido_receta)
+            print(f"tu receta {nombre_receta} ha sido creada")
+            existe = True
+        else:
+            print("lo siento esa receta ya existe")
+
+
 menu = 0
 
 if menu == 1:
@@ -110,6 +128,8 @@ elif menu == 2:
     mi_categoria = elegir_categoria(mis_categorias)
 
     #crear receta
+    crear_receta(mi_categoria)
+    
     #volver inicio
     pass
 elif menu == 3:
