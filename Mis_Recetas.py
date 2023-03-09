@@ -115,6 +115,11 @@ def crear_categoria(ruta):
         else:
             print("lo siento esa categoria ya existe")
 
+def eliminar_receta(receta):
+    #unlink es el metodo para eliminar un archivo
+    Path(receta).unlink()
+    print(f"la receta {receta.name} ha sido eliminada")
+
 
 menu = 0
 
@@ -168,6 +173,8 @@ elif menu == 4:
     mi_receta = elegir_recetas(mis_recetas)
 
     # eliminar receta
+    eliminar_receta(mi_receta)
+    
     # volver inicio
     pass
 elif menu == 5:
