@@ -78,7 +78,9 @@ def elegir_recetas(lista):
         eleccion_receta = input("\n elige una receta: ")
 
     return lista[int(eleccion_receta)-1]
-inicio()
+
+def leer_receta(receta):
+    print(Path.read_text(receta))
 
 menu = 0
 
@@ -96,6 +98,8 @@ if menu == 1:
     mi_receta =elegir_recetas(mis_recetas)
 
     #leer receta
+    leer_receta(mi_receta)
+
     #volver inicio
     pass
 elif menu == 2:
@@ -124,7 +128,7 @@ elif menu == 4:
 
     # elegir  receta
     mi_receta = elegir_recetas(mis_recetas)
-    
+
     # eliminar receta
     # volver inicio
     pass
