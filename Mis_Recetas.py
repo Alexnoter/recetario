@@ -99,6 +99,22 @@ def crear_receta(ruta):
         else:
             print("lo siento esa receta ya existe")
 
+def crear_categoria(ruta):
+    existe = False
+
+    while not existe:
+        print("Escribe el nombre de la nueva categoria")
+        nombre_categoria = input()
+
+        ruta_nueva = Path(ruta,nombre_categoria)
+
+        if not os.path.exists(ruta_nueva):
+            Path.mkdir(ruta_nueva)
+            print(f"tu categoria {nombre_categoria} ha sido creada")
+            existe = True
+        else:
+            print("lo siento esa categoria ya existe")
+
 
 menu = 0
 
@@ -134,6 +150,8 @@ elif menu == 2:
     pass
 elif menu == 3:
     #crear categoria
+    crear_categoria(mi_ruta)
+
     #volver al inicio
     pass
 elif menu == 4:
